@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es" ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>INYECCIÓN DE DEPENDENCIAS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      	<script type="text/javascript" src="../libs/angularjs1.6/angular.min.js"></script>
+      	<script type="text/javascript" src="app.js"></script>
+    </head>
+    <body>
+        
+		<h1>Inyección de dependencias en Javascript</h1>
+		<div ng-controller="DIController">
+			<input type="text" name="nombre" 
+				ng-model="nombre"
+				ng-blur="upper()"
+				ng-focus="lower()"
+				placeholder="Ingrese su nombre">
+		</div>
+
+    </body>
+</html>
