@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>SELECTORES HTML</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="../libs/angularjs1.6/angular.min.js"></script>
+	</head>
+	<body>
+
+		<h1>Selectores HTML</h1>
+		<div class="row" id="content" ng-app="myApp">
+			<h2 id="header">
+				Subtitulo del artículo
+			</h2>
+			<div ng-controller="datosController">
+				<p> {{ nombre }} </p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			(function() {
+				"use strict";
+
+				var e_01 = document.getElementById("content");
+				var e_02 = document.getElementsByClassName("row");
+				var e_03 = document.querySelector("[ng-app]")
+				console.log("Elemento 1:", e_01);
+				console.log("Elemento 2:", e_02);
+				console.log("Elemento 3:", e_03);
+
+				var stringNgApp = e_03.getAttribute("ng-app");
+				console.log("Atributo ng-app:", stringNgApp);
+
+				/**
+				 * Implementando código básico de angular JS 1.6
+				 */
+				angular.module(stringNgApp, [])
+				.controller('datosController', function($scope){
+					$scope.nombre = "Gemerson Henry";
+				})	
+			})();
+
+		</script>
+	</body>
+</html>
