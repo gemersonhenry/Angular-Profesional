@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es" ng-app="appCalculador">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>2DO EJEMPLO</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="../libs/angularjs1.6/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+    <body>
+		
+		<h1>Calculando valores</h1>
+		<div ng-controller="calculadorController">
+			<div>
+				<input type="text" name="nombre" ng-model="nombre" ng-keyup="calcular()"/>
+			</div>
+			<div>
+				<ol>
+					<li>Longitud del nombre: {{ longitudDelNombre }} </li>
+					<li>Suma de códigos de caracteres: {{ sumaDeCodigosDeCaracteres }} </li>
+					<li>Número de vocales: {{ numeroDeVocales }} </li>
+				</ol>
+			</div>
+		</div>		
+
+    </body>
+</html>
