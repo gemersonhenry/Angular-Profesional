@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es" ng-app="MsgApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>INTERPOLACIÓN</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      	<script type="text/javascript" src="../libs/angularjs1.6/angular.min.js"></script>
+      	<script type="text/javascript" src="app.js"></script>
+
+    </head>
+    <body>
+        
+		<h1>Expresiones e Interpolación</h1>
+		<div ng-controller="MsgController">
+            {{ nombre }} tiene un mensaje para ti: <br/>
+            {{ mostrarMensaje() }} <br/>
+            <button type="button" ng-click="cambiarImagen()">
+                Cambiar Imagen
+            </button>
+            <!-- <img src="img/{{foto}}.jpg"> -->
+            <img ng-src="img/{{foto}}.jpg">
+        </div>
+
+    </body>
+</html>
