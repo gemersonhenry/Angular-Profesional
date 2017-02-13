@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es" ng-app="appRepeat">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>INTERPOLACIÓN</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      	<script type="text/javascript" src="../libs/angularjs1.6/angular.min.js"></script>
+      	<script type="text/javascript" src="app.js"></script>
+    </head>
+    <body>
+        <h2>Lista de frutas a comprar:</h2>
+        <div ng-controller="RepeatController">
+            
+            <!-- Lista de ng-repeat #1 -->
+            <ul>
+                <li ng-repeat="item in list1">
+                    {{ item }}
+                </li>
+            </ul>
+
+            <!-- Lista de ng-repeat #2 -->
+            <ul>
+                <li ng-repeat="item in list2">
+                    {{ item.nombre }}, precio: {{ item.precio | currency: 'S/.' }}
+                </li>
+            </ul>
+
+            <!-- Lista de ng-repeat #3 -->
+            <ul>
+                <li ng-repeat="item in list2">
+                    <b>{{ $index+1 }}.</b> {{ item.nombre }}, precio: {{ item.precio | currency: 'S/.' }}
+                </li>
+            </ul>
+            <form>
+                <input type="text" ng-model="nuevoNombre" placeholder="Nombre">
+                <input type="text" ng-model="nuevoPrecio" placeholder="Precio">
+                <button ng-click="agregarFruta()">Agregar</button>
+            </form>
+
+        </div>            
+    </body>
+</html>
