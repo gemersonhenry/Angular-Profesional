@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es" ng-app="appContador">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>INTERPOLACIÓN</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      	<script type="text/javascript" src="../libs/angularjs1.6/angular.min.js"></script>
+      	<script type="text/javascript" src="app.js"></script>
+    </head>
+    <body>
+
+        <div ng-controller="ContadorController">
+            <button type="button" ng-click="showNumberOfWatchers()"># de watchers</button> <br/>
+            <button type="button" ng-click="countOnce()">Change Counter</button> <br/>
+            <button type="button" ng-click="upCounter()">Increment Counter</button> <br/>
+            <div>
+                onceCounter: {{ onceCounter }} <br/>
+                Counter: {{ counter }}
+            </div>
+        </div>
+
+    </body>
+</html>
