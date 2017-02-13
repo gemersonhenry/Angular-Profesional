@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" ng-app="MsgApp">
+<html lang="es" ng-app="appFilter">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,6 +10,16 @@
       	<script type="text/javascript" src="app.js"></script>
     </head>
     <body>      
-		
+		<h1>Filters Personalizados</h1>
+        <div ng-controller="UserController">
+            Estado de animo: {{ estadoDeAnimo }} <br/>
+            Mensaje Original: {{ mostrarMensaje() }} <br/>
+            Mensaje Modificado: {{ mostrarMensajeFiltrado() }} <br/>
+            Verdad: {{ mostrarMensajeFiltrado() | verdad: "italiana": "peruana" }} <br/>
+            VERDAD: {{ mostrarMensajeFiltrado() | verdad: "italiana": "peruana" | uppercase }}
+            <div>
+                <button ng-click="alimentarGemerson()">Alimentar Gemerson</button>
+            </div>
+        </div>
     </body>
 </html>
