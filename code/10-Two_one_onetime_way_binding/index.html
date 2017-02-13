@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es" ng-app="appBinding">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>INTERPOLACIÓN</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      	<script type="text/javascript" src="../libs/angularjs1.6/angular.min.js"></script>
+      	<script type="text/javascript" src="app.js"></script>
+    </head>
+    <body>
+        <h1> Saludos de parte de {{ primerNombre }} </h1>
+        <div ng-controller="BindingController">
+            <button type="button" ng-click="showNumberOfWatchers()"># de watchers</button> <br/>
+
+            Nombre completo: {{ ::nombreCompleto }} <br/>
+            <button ng-click="setNombreCompleto()">Set nombre completo</button> <br/>
+            <button ng-click="logPrimerNombre()">log primer nombre</button> <br/>
+            <button ng-click="logNombreCompleto()">log nombre completo</button> <br/>
+
+            <input type="text" ng-model="primerNombre" placeholder="Nombre">
+        </div>
+    </body>
+</html>
