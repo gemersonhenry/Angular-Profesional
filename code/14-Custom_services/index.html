@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>INTERPOLACIÓN</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      	<script type="text/javascript" src="../libs/angularjs1.6/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+	<body ng-app="appServices">
+
+        <h1>CUSTOM SERVICES</h1>
+
+        <div ng-controller="ShoppingListAddController as itemAdder">
+            <input type="text" ng-model="itemAdder.itemName" placeholder="Nombre">
+            <input type="text" ng-model="itemAdder.itemQuantity" placeholder="Quantity">
+            <button ng-click="itemAdder.addItem();">Add Item to Shopping List</button>
+        </div>
+
+        <div ng-controller="ShoppingListShowController as showList">
+            <ol>
+                <li ng-repeat="item in showList.items">
+                    {{ item.quantity }} of {{ item.name }}
+                    <button ng-click="showList.removeItem($index)">Remove Item</button>
+                </li>
+            </ol>
+        </div>
+	</body>
+</html>

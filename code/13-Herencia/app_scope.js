@@ -52,3 +52,13 @@ function ChildController2($scope) {
 }
 
 })();
+
+/**
+* USO PRINCIPAL DE LOS CONTROLLERS
+* Inicializar los valores y estados del $scope 
+* Agregar comportamiento al $scope
+*
+* LO QUE NO SE DEBE HACER
+* Manipular la lógica de negocio dentro del mismo controlador
+* Compartir codigo de estados combinando controladores
+*/
