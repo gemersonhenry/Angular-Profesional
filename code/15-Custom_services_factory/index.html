@@ -10,9 +10,40 @@
         <script type="text/javascript" src="app.js"></script>
     </head>
 	<body ng-app="appFactory">
+        <h1>Utilizando los services factory</h1>
         
-        <div ng-controller="ShoppingController as items">
-            
+        <!-- LISTA #1 - elementos ilimitados -->
+        <div ng-controller="ShoppingListController1 as list1">
+            <h3>Shopping list #1</h3>
+            <input type="text" ng-model="list1.itemName" placeholder="Name">
+            <input type="text" ng-model="list1.itemQuantity" placeholder="Name">
+            <button ng-click="list1.addItem()">Add Item</button>
+            <ol>
+                <li ng-repeat="item in list1.items">
+                    {{ item.quantity }} of {{ item.name }}
+                    <button ng-click="list1.removeItem($index)">Remove Item</button>
+                </li>
+            </ol>
+            <div>
+                Error: {{ list1.errorMessage }}                
+            </div>
+        </div>
+
+        <!-- LISTA #2 - limitado a 3 elementos -->
+        <div ng-controller="ShoppingListController2 as list2">
+            <h3>Shopping list #2 (Limited to 3 items)</h3>
+            <input type="text" ng-model="list2.itemName" placeholder="Name">
+            <input type="text" ng-model="list2.itemQuantity" placeholder="Name">
+            <button ng-click="list2.addItem()">Add Item</button>
+            <ol>
+                <li ng-repeat="item in list2.items">
+                    {{ item.quantity }} of {{ item.name }}
+                    <button ng-click="list2.removeItem($index)">Remove Item</button>
+                </li>
+            </ol>
+            <div>
+                Error: {{ list2.errorMessage }}                
+            </div>
         </div>
         
 	</body>
