@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es"  ng-app="appFactory">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>INTERPOLACIÓN</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      	<script type="text/javascript" src="../libs/angularjs1.6/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+	<body>
+        <h1>Utilizando los services factory</h1>
+        
+        <!-- LISTA - preconfiguración -->
+        <div ng-controller="ShoppingListController as list">
+            <h3>Shopping list</h3>
+            <input type="text" ng-model="list.itemName" placeholder="Name">
+            <input type="text" ng-model="list.itemQuantity" placeholder="Name">
+            <button ng-click="list.addItem()">Add Item</button>
+            <ol>
+                <li ng-repeat="item in list.items">
+                    {{ item.quantity }} of {{ item.name }}
+                    <button ng-click="list.removeItem($index)">Remove Item</button>
+                </li>
+            </ol>
+            <div>
+                Error: {{ list.errorMessage }}                
+            </div>
+        </div>
+        
+	</body>
+</html>
