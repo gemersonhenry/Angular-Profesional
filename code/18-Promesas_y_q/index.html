@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es"  ng-app="appPromises">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>INTERPOLACIÓN</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+	<body>
+        
+        <h1>Lista de compras con PROMESAS</h1>
+        <div ng-controller="ShoppingListController as list">
+            <h3>Lista de compras</h3>
+            <input type="text" ng-model="list.itemName" placeholder="Item name" /> <br/>
+            <input type="text" ng-model="list.itemQuantity" placeholder="Item quantity" /> <br/>
+            <button type="button" ng-click="list.addItem()">Agregar Item</button>
+            <ol>
+                <li ng-repeat="item in list.items">
+                    {{item.name}} boxes of {{item.quantity}}
+                    <button type="button" ng-click="list.removeItem($index)">Eliminar Item</button>
+                </li>
+            </ol>
+        </div>
+        
+        <script type="text/javascript" src="../libs/angularjs1.6/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+	</body>
+</html>
