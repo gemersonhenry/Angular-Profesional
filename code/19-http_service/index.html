@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es"  ng-app="appHttp">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>INTERPOLACIÓN</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+	<body>
+        
+        <h1>Usando $http Service</h1>
+        <div ng-controller="MenuCategoriesController as menu">
+            <h3>Lista de menu categorias</h3>
+            <ul>
+                <li ng-repeat="cat in menu.categories">
+                    (<a href="" ng-click="menu.logMenuItems(cat.short_name)"> {{cat.short_name}} </a>)
+                    {{cat.name}}
+                </li>
+            </ul>
+        </div>
+        
+        <script type="text/javascript" src="../libs/angularjs1.6/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+	</body>
+</html>
